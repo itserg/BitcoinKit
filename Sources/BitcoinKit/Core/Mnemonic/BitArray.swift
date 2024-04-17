@@ -77,6 +77,9 @@ public struct BitArray: Hashable, RangeReplaceableCollection {
         self.init(mapped)
     }
 
+    public func replaceSubrange<C>(_ subrange: Range<Int>, with newElements: C) where C : Collection, Bool == C.Element {
+    }
+    
     /// A non-optimized initializer taking an array of `UInt11`
     init<S>(_ elements: S) where S: Sequence, S.Iterator.Element == UInt11 {
         let binaryString: String = elements.map { $0.binaryString }.joined()
